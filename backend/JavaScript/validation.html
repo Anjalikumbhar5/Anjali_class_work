@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    function  validation12()
+    {
+        var x = document.forms["form1"][fname].value;
+        var str = / (^[A-Za-z]{1,1})+([a-z] {1,19}) $/;
+        if (x==='' || x==null)
+        {
+            msg1.innerHTML = 'plz enter your Name';
+            return false;
+        }
+        else
+        {
+            msg1.innerHTML= '';
+        }
+
+
+        if (!x.match(str))
+        {
+            msg1.innerHTML = 'enter your such as Anjali';
+            return false;
+        }
+        else
+        {
+            msg1.innerHTML ='';
+        }
+
+        if((form1.gender[0].checked==false) && (form1.gender[1].checked==false))
+        {
+            msg2.innerHTML = 'plz select your gender'
+            return false;
+        }
+        else
+        {
+            msg2.innerHTML= '';
+        }
+
+        if(form.city.selectedIndex==0)
+        {
+            msg3.innerHTML ='plz select your city group'
+            return false;
+        }
+        else
+        {
+            msg3.innerHTML ='';
+        }
+        if(form1.terms.checked==false)
+        {
+
+            msg4.innerHTML = 'plz check above checkbox otherwise you not be able to create new user account '
+            return false;
+        }
+        else
+        {
+            msg4.innerHTML = '';
+        }
+    }
+</script>
+<body>
+
+<form name ='form1' action="#" method="post" onsubmit="return validation12()">
+    <table>
+        <tr>
+            <td>first name:</td>
+            <td><input type="text" name="fname" id="fname"></td>
+            <td><i id="msg1"></i></td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td>
+                male <input type="radio" name="gender" value="male">
+                female<input type="radio" name="gender" value="female">
+            </td>
+            <td>
+                <i id="msg2"></i>
+            </td>
+        </tr>
+        <tr>
+            <td>city:</td>
+            <td>
+                <select name="city">
+                    <option>select</option>
+                    <option>pune</option>
+                    <option>mumbai</option>
+                    <option>solapur</option>
+                    <option>latur</option>
+
+                </select>
+            </td>
+            <td><i id="msg3"></i></td>
+        </tr>
+        <tr>
+            <td>terms and condition:</td>
+            <td><input type="checkbox" name="terms"> </td>
+            <td><i id="msg4"></i></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="submit">
+                <input type="reset" value="clear">
+
+
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
